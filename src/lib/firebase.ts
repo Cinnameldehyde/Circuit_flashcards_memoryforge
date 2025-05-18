@@ -6,7 +6,7 @@ import { initializeApp, getApps, type FirebaseApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBnyEvJvzH4wGoJrP38v1_ZLtCJWiv4-kc",
+  apiKey: "****************************",
   authDomain: "memoryforge.firebaseapp.com",
   projectId: "memoryforge",
   storageBucket: "memoryforge.firebasestorage.app", // Corrected from user snippet if it was different
