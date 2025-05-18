@@ -1,0 +1,285 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Light Theme - New Scheme: Deep Teal & Amber */
+    --background-start-hsl: 200 20% 98%; /* Very light, cool off-white */
+    --background-end-hsl: 200 20% 96%;
+    --background: var(--background-start-hsl);
+
+    --foreground: 210 25% 25%; /* Dark, slightly desaturated blue-gray */
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 25% 28%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 25% 28%;
+
+    /* Primary: Deep Teal */
+    --primary-start-hsl: 180 65% 40%; 
+    --primary-end-hsl: 175 60% 45%;
+    --primary-start-hover-hsl: 180 65% 45%;
+    --primary-end-hover-hsl: 175 60% 50%;
+    --primary: var(--primary-start-hsl);
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft Gray */
+    --secondary: 210 15% 94%; 
+    --secondary-foreground: 210 20% 35%;
+
+    --muted: 210 15% 94%;
+    --muted-foreground: 210 10% 50%; 
+
+    /* Accent: Vibrant Amber/Orange */
+    --accent-start-hsl: 35 90% 55%; 
+    --accent-end-hsl: 40 85% 60%;
+    --accent-start-hover-hsl: 35 90% 60%; 
+    --accent-end-hover-hsl: 40 85% 65%;
+    --accent: var(--accent-start-hsl);
+    --accent-foreground: 210 25% 15%; /* Darker text on light accent */
+
+    --destructive: 0 70% 58%; 
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 88%; 
+    --input: 210 20% 96%; 
+    --ring: 180 65% 40%; /* Match primary */
+
+    --chart-1: hsl(var(--primary-start-hsl));
+    --chart-2: hsl(var(--accent-start-hsl));
+    --chart-3: 195 70% 50%; /* Complementary Blue */
+    --chart-4: 15 80% 65%; /* Soft Red/Coral */
+    --chart-5: 270 60% 65%; /* Muted Purple */
+
+    --radius: 0.75rem;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 205 20% 97%; /* Slightly different off-white */
+    --sidebar-foreground: 210 25% 30%;
+    --sidebar-primary: hsl(var(--primary-start-hsl));
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 92%;
+    --sidebar-accent-foreground: hsl(var(--primary-start-hsl));
+    --sidebar-border: 210 15% 88%;
+    --sidebar-ring: hsl(var(--primary-start-hsl));
+
+    /* Landing Page Gradient Colors - Light to Dark (New Scheme) */
+    --landing-bg-start-hsl: 190 40% 96%; /* Very light cyan/blue */
+    --landing-bg-end-hsl: 210 30% 55%;   /* Medium grayish blue */
+  }
+
+  .dark {
+    /* Dark Theme - New Scheme: Deep Teal & Amber */
+    --background-start-hsl: 210 20% 12%; /* Deep cool gray */
+    --background-end-hsl: 215 18% 15%;
+    --background: var(--background-start-hsl);
+
+    --foreground: 200 15% 88%; /* Light, cool gray */
+
+    --card: 210 15% 18%; 
+    --card-foreground: 200 15% 88%;
+
+    --popover: 210 15% 18%;
+    --popover-foreground: 200 15% 88%;
+
+    /* Primary: Brighter Deep Teal */
+    --primary-start-hsl: 180 60% 50%; 
+    --primary-end-hsl: 175 55% 55%;
+    --primary-start-hover-hsl: 180 60% 55%;
+    --primary-end-hover-hsl: 175 55% 60%;
+    --primary: var(--primary-start-hsl);
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Darker Gray */
+    --secondary: 210 15% 25%;
+    --secondary-foreground: 200 10% 75%;
+
+    --muted: 210 15% 25%;
+    --muted-foreground: 200 10% 60%;
+
+    /* Accent: Brighter Amber/Orange */
+    --accent-start-hsl: 35 85% 60%; 
+    --accent-end-hsl: 40 80% 65%;
+    --accent-start-hover-hsl: 35 85% 65%;
+    --accent-end-hover-hsl: 40 80% 70%;
+    --accent: var(--accent-start-hsl);
+    --accent-foreground: 210 30% 10%; /* Very dark text on light accent */
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 30%;
+    --input: 210 15% 22%;
+    --ring: 180 60% 50%; /* Match primary */
+
+    --chart-1: hsl(var(--primary-start-hsl));
+    --chart-2: hsl(var(--accent-start-hsl));
+    --chart-3: 195 60% 55%;
+    --chart-4: 15 70% 60%;
+    --chart-5: 270 50% 60%;
+
+    /* Sidebar specific colors - Dark */
+    --sidebar-background: 210 18% 14%; /* Darker sidebar */
+    --sidebar-foreground: 200 15% 80%;
+    --sidebar-primary: hsl(var(--primary-start-hsl));
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 25%;
+    --sidebar-accent-foreground: hsl(var(--primary-start-hsl));
+    --sidebar-border: 210 15% 22%;
+    --sidebar-ring: hsl(var(--primary-start-hsl));
+
+    /* Landing Page Gradient Colors (Dark mode version - New Scheme) */
+    --landing-bg-start-hsl: 210 25% 20%; /* Darker cool gray */
+    --landing-bg-end-hsl: 220 30% 10%;   /* Very dark desaturated blue */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .bg-primary {
+    background-image: linear-gradient(to right, hsl(var(--primary-start-hsl)), hsl(var(--primary-end-hsl)));
+  }
+  .hover\:bg-primary-gradient:hover {
+    background-image: linear-gradient(to right, hsl(var(--primary-start-hover-hsl)), hsl(var(--primary-end-hover-hsl)));
+  }
+
+  .text-primary {
+    color: hsl(var(--primary-start-hsl));
+  }
+   .ring-primary {
+    --tw-ring-color: hsl(var(--primary-start-hsl));
+  }
+
+   .bg-accent {
+     background-image: linear-gradient(to right, hsl(var(--accent-start-hsl)), hsl(var(--accent-end-hsl)));
+   }
+   .hover\:bg-accent-gradient:hover {
+    background-image: linear-gradient(to right, hsl(var(--accent-start-hover-hsl)), hsl(var(--accent-end-hover-hsl)));
+   }
+   .text-accent {
+    color: hsl(var(--accent-start-hsl));
+   }
+
+   /* Dark mode specific overrides */
+   .dark .bg-primary {
+    background-image: linear-gradient(to right, hsl(var(--primary-start-hsl)), hsl(var(--primary-end-hsl)));
+   }
+   .dark .hover\:bg-primary-gradient:hover {
+    background-image: linear-gradient(to right, hsl(var(--primary-start-hover-hsl)), hsl(var(--primary-end-hover-hsl)));
+   }
+   .dark .bg-accent {
+     background-image: linear-gradient(to right, hsl(var(--accent-start-hsl)), hsl(var(--accent-end-hsl)));
+   }
+   .dark .hover\:bg-accent-gradient:hover {
+    background-image: linear-gradient(to right, hsl(var(--accent-start-hover-hsl)), hsl(var(--accent-end-hover-hsl)));
+   }
+   
+   .dark .text-primary {
+     color: hsl(var(--primary-start-hsl)); 
+   }
+   .dark .text-accent {
+     color: hsl(var(--accent-start-hsl)); 
+   }
+   .dark .ring-primary {
+    --tw-ring-color: hsl(var(--primary-start-hsl));
+   }
+
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 10s ease infinite;
+  }
+  
+  .bg-landing-gradient {
+    /* Angled from top-left (light) to bottom-right (dark) for a smoother visual */
+    background-image: linear-gradient(135deg, hsl(var(--landing-bg-start-hsl)) 0%, hsl(var(--landing-bg-end-hsl)) 100%);
+  }
+}
+
+@layer utilities {
+  .perspective {
+    perspective: 1000px;
+  }
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+   .animate-pulse-slow {
+    animation: pulse-slow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; /* Adjusted duration */
+  }
+
+  /* For Auth Layout Flipping Card */
+  .perspective {
+    perspective: 1000px;
+  }
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* For Safari */
+  }
+  .text-shadow {
+    text-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  }
+  .dark .text-shadow {
+    text-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.5);
+  }
+   .text-shadow-sm {
+    text-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.15);
+  }
+  .dark .text-shadow-sm {
+    text-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.4);
+  }
+}
+
+
+/* Ensure text selection color is pleasant */
+::selection {
+  background-color: hsla(var(--primary-start-hsl), 0.3); 
+  color: hsl(var(--foreground));
+}
+.dark ::selection {
+  background-color: hsla(var(--primary-start-hsl), 0.4);
+  color: hsl(var(--foreground));
+}
+
+    
